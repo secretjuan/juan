@@ -29,7 +29,7 @@ export default function MainFooter() {
               Office address
             </Typography>
             <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              Maximina Street, Villa Arca Ave, Project 8, Quezon City
+              Caloocan City, Philippines
             </Typography>
           </Grid>
 
@@ -38,7 +38,7 @@ export default function MainFooter() {
               Email address
             </Typography>
             <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              rentacourt.temporary@gmail.com
+              sanchez.juanmiguel16@gmail.com
             </Typography>
           </Grid>
           <Grid item xs={12} md={3} sx={{ textAlign: 'center' }}>
@@ -46,7 +46,7 @@ export default function MainFooter() {
               Call
             </Typography>
             <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              (02) 1234 5647
+              (+63) 9123768202
             </Typography>
           </Grid>
         </Grid>
@@ -60,7 +60,7 @@ export default function MainFooter() {
             textAlign: { xs: 'center', md: 'center' }
           }}
         >
-          © 2024. All rights reserved. Rent A Court.
+          © 2024. All rights reserved. JMS.
         </Typography>
       </Container>
     </RootStyle>
