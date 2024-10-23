@@ -24,7 +24,7 @@ export default function AboutContents() {
           <Typography
             component="h2"
             variant="h5"
-            color="common.black"
+            color="common.grey"
             sx={{ textAlign: 'center', my: { xs: 2, md: 6 } }}
           >
             We are in the business of helping clients grow their business. with more than 5 years of professional

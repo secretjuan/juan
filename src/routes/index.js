@@ -59,7 +59,7 @@ export default function Router() {
       element: <MainLayout />,
       children: [
         { path: '/', element: <LandingPage /> },
-        /*{ path: '/about-us', element: <AboutPage /> },*/
+        { path: '/about', element: <AboutPage /> },
         { path: '/services', element: <ServicesPage /> },
         { path: '/contact-us', element: <ContactPage /> },
         { path: '/inquiry', element: <InquiryPage /> },

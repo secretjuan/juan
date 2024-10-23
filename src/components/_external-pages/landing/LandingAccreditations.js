@@ -12,43 +12,61 @@ import { varFadeInUp } from '../../animate';
 const MOCK_CAROUSELS = [
   {
     id: 1,
-    image: '/static/accreditations/accreditations-bir.png'
+    image: '/favicon/html.png',
+    title: 'HTML'
   },
   {
     id: 2,
-    image: '/static/accreditations/accreditations-dole.png'
+    image: '/favicon/css.png',
+    title: 'CSS'
   },
   {
     id: 3,
-    image: '/static/accreditations/accreditations-pagibig.png'
+    image: '/favicon/js.png',
+    title: 'Javascript'
   },
   {
     id: 4,
-    image: '/static/accreditations/accreditations-sec.png'
+    image: '/favicon/react.png',
+    title: 'ReactJS'
   },
   {
-    id: 4,
-    image: '/static/accreditations/accreditations-sss.png'
+    id: 5,
+    image: '/favicon/node.png',
+    title: 'NodeJS'
+  },
+  {
+    id: 6,
+    image: '/favicon/mongodb.png',
+    title: 'MongoDB'
+  },
+  {
+    id: 7,
+    image: '/favicon/git.png',
+    title: 'Git'
   }
 ];
 
 const RootStyle = styled('div')(() => ({
   overflow: 'hidden',
   position: 'relative',
-  marginTop: 128
+  marginTop: 128,
+  backgroundColor: '#363636'
 }));
 
 const SliderStyle = styled('div')(() => ({
   overflow: 'hidden',
   position: 'relative',
   height: 300,
-  marginBottom: 64
+  marginBottom: 64,
 }));
 
 const CarouselImgStyle = styled('img')(({ theme }) => ({
   width: 180,
   height: 180,
   margin: 'auto',
+  paddingTop: '10px',
+  paddingBottom: '10px',
   objectFit: 'contain',
   transition: theme.transitions.create('all')
 }));
@@ -68,10 +86,16 @@ function CarouselItem({ item }) {
         mx: 1,
         borderRadius: 2,
         overflow: 'hidden',
-        position: 'relative'
+        position: 'relative',
+        color: 'black',
+        textAlign: 'center'
       }}
     >
       <CarouselImgStyle alt={title} src={image} />
+      <Typography variant="h5" sx={{ padding: '10px 0'}}>
+        {title}
+      </Typography>
+      
     </Paper>
   );
 }
@@ -87,8 +111,18 @@ export default function LandingAccreditations() {
     autoplay: true,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
+    marginTop: '500px',
     slidesToShow: 4,
     rtl: Boolean(theme.direction === 'rtl'),
+    appendDots: dots => (
+      <div
+          style={{
+              marginTop: "290px" // Adjust as needed
+          }}
+      >
+          {dots}
+      </div>
+  ),
     responsive: [
       {
         breakpoint: 1024,
@@ -116,19 +150,11 @@ export default function LandingAccreditations() {
                 color: 'common.black',
                 margin: 'auto',
                 textAlign: 'center',
-                mt: { xs: 5, sm: 0, md: 0 }
+                mt: { xs: 5, sm: 0, md: 5 }
               }}
               component="h2"
             >
-              Our Accreditations
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{ color: 'common.black', mt: 1, fontWeight: 400, textAlign: 'center' }}
-              component="p"
-            >
-              7-Star holds a wide range of credentials needed to provide the highest level of expertise and
-              professionalism in the services you need. We strive for excellence in all aspects of the business
+              Knowledgeable in
             </Typography>
           </motion.div>
         </Box>
@@ -139,7 +165,7 @@ export default function LandingAccreditations() {
             ))}
           </Slider>
         </SliderStyle>
-        <Box sx={{ mb: 4 }}>
+        {/* <Box sx={{ mb: 4 }}>
           <motion.div variants={varFadeInUp} style={{ marginTop: 0 }}>
             <Typography
               variant="h2"
@@ -192,7 +218,7 @@ export default function LandingAccreditations() {
               </Grid>
             </Grid>
           </motion.div>
-        </Box>
+        </Box> */}
       </Container>
     </RootStyle>
   );

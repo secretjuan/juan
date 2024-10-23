@@ -4,7 +4,7 @@ import { styled } from '@material-ui/core/styles';
 import Page from '../components/Page';
 import {
   LandingHero,
-  LandingProjects
+  LandingAccreditations
 } from '../components/_external-pages/landing';
 import  Card  from 'components/_external-pages/jaby/Card.js';
 // ----------------------------------------------------------------------
@@ -27,6 +27,7 @@ export default function LandingPage() {
       <LandingHero />
       {/* <LandingProjects /> */}
       <Card />
+      <LandingAccreditations />
     </RootStyle>
   );
 }

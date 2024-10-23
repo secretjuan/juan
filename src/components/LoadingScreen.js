@@ -79,7 +79,7 @@ export default function LoadingScreen({ ...other }) {
           repeat: Infinity
         }}
       >
-        <Box component="img" src="/static/logo.png" sx={{ width: 100, objectFit: 'contain' }} />
+        <Box component="img" src="/favicon/jms2.png" sx={{ width: 100, objectFit: 'contain' }} />
       </motion.div>
 
       <Box

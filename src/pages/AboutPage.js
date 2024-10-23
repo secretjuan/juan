@@ -9,6 +9,13 @@ import {
   AboutCore,
   AboutHistory
 } from '../components/_external-pages/about';
+import { 
+  LandingStores,
+  LandingTeam,
+  LandingBusiness,
+  LandingAccreditations
+
+ } from 'components/_external-pages/landing';
 
 // ----------------------------------------------------------------------
 
@@ -26,18 +33,18 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function AboutPage() {
   return (
-    <RootStyle title="About Us - 7 Star Manpower Services of Philippines Corporation" id="move_top">
+    <RootStyle title="About Me - JMS" id="move_top">
       <AboutHero />
       <ContentStyle>
         <AboutContent />
         <AboutVisionMission />
         <AboutCore />
         <AboutHistory />
-        {/* <LandingStores />
+        <LandingStores />
         <LandingTeam />
         <LandingBusiness />
         <LandingAccreditations />
-        <LandingTestimony /> */}
+        {/* <LandingTestimony /> */}
       </ContentStyle>
     </RootStyle>
   );

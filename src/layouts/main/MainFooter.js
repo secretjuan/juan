@@ -9,8 +9,11 @@ import { Grid, Link, Divider, Container, Typography, Stack, Box } from '@materia
 
 const RootStyle = styled('div')(({ theme }) => ({
   position: 'relative',
-  backgroundColor: theme.palette.background.default
+  backgroundColor: theme.palette.background.default,
+  marginTop: '0px',
+  overflow: 'hidden',
 }));
+
 
 // ----------------------------------------------------------------------
 
@@ -57,7 +60,8 @@ export default function MainFooter() {
             mt: 5,
             pb: 5,
             fontSize: 13,
-            textAlign: { xs: 'center', md: 'center' }
+            color: 'black',
+            textAlign: { xs: 'center', md: 'center' },
           }}
         >
           © 2024. All rights reserved. JMS.

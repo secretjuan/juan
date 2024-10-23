@@ -140,7 +140,7 @@ const palette = {
   light: {
     ...COMMON,
     text: { primary: GREY[800], secondary: GREY[600], pink: '#e06c75', disabled: GREY[500] },
-    background: { paper: '#fff', default: '#fff', black: '#282c34', neutral: GREY[200] },
+    background: { paper: '#fff', default: '#fff', black: '#282c34', neutral: GREY[1] },
     action: { active: GREY[600], ...COMMON.action }
   },
   dark: {

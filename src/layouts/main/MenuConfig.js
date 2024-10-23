@@ -4,8 +4,8 @@ const menuConfig = [
     path: '/'
   },
   {
-    title: 'Education',
-    path: '/education'
+    title: 'About Me',
+    path: '/about'
   },
   {
     title: 'Contact',
