@@ -44,18 +44,19 @@ const ToolbarShadowStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function MainNavbar() {
-  const isOffset = useOffSetTop(100);
+  const isOffset = useOffSetTop(570);
   const { pathname } = useLocation();
   const isHome = pathname === '/';
 
   return (
-    <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
+    <AppBar sx={{ boxShadow: isOffset ? 3 : 0, bgcolor: isOffset ? 'background.neutral' : 'transparent' }}>
       <ToolbarStyle
         disableGutters
         sx={{
-          bgcolor: 'background.grey[1]',
+          bgcolor: isOffset ? 'background.neutral' : 'transparent',
           ...(isOffset && {
-            height: { md: APP_BAR_DESKTOP - 12 }
+            height: { md: APP_BAR_DESKTOP - 12 },
+            transition: 'background-color 0.3s ease, height 0.3s ease' // Ensuring smooth transitions
           })
         }}
       >
@@ -66,7 +67,6 @@ export default function MainNavbar() {
             alignItems: 'center',
             justifyContent: 'space-between',
             overflow: 'hidden',
-            
           }}
         >
           <Link component={RouterLink} to="/" underline="none">

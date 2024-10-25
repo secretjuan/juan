@@ -26,12 +26,14 @@ const MOCK_CAROUSELS = [
   }
 ];
 
+const cover = '/favicon/bg.avif';
+
 const RootStyle = styled('div')(() => ({
   overflow: 'hidden',
   position: 'relative',
-  // marginBottom: '25vh',
+  marginBottom: '0vh',
   height: 'auto',
-  paddingBottom: '20px',
+  paddingBottom: '50px',
   // backgroundColor: '#363636'
 }));
 
@@ -76,8 +78,17 @@ function CarouselItem({ item }) {
 
 export default function Card() {
   return (
-    <RootStyle>
-      <Container sx={{backgroundColor: 'grey[1]'}}>
+    <RootStyle
+      // sx={{
+      //   backgroundImage: `url(${cover})`,
+      //   backgroundRepeat: 'no-repeat',
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center',
+      //   backgroundColor: '#FFFFFF',
+      //   backgroundAttachment: 'fixed'
+      // }}
+    >
+      <Container sx={{backgroundColor: 'grey[1]', alignContent: 'center'}}>
         <Box sx={{ textAlign: 'center', mb:{xs:5, md:10}, mt: {xs:3, md:4} }}>
           <Typography variant='h4' sx={{ fontSize: { xs: '16px', md: '38px', color: 'black' } }}> Projects </Typography>
         </Box>

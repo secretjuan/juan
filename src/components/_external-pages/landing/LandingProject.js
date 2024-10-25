@@ -100,7 +100,7 @@ function CarouselItem({ item }) {
   );
 }
 
-export default function LandingAccreditations() {
+export default function LandingProject() {
   const carouselRef = useRef();
   const theme = useTheme();
 
@@ -142,7 +142,7 @@ export default function LandingAccreditations() {
   return (
     <RootStyle>
       <Container maxWidth="lg">
-        <Box sx={{ mb: 10 }}>
+      <Box sx={{ mb: 10 }}>
           <motion.div variants={varFadeInUp} style={{ marginTop: 0 }}>
             <Typography
               variant="h2"
@@ -150,21 +150,22 @@ export default function LandingAccreditations() {
                 color: 'common.black',
                 margin: 'auto',
                 textAlign: 'center',
-                mt: { xs: 5, sm: 0, md: 5 }
+                mt: { xs: 5, sm: 0, md: 0 }
               }}
               component="h2"
             >
-              Knowledgeable in
+              Our Accreditations
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ color: 'common.black', mt: 1, fontWeight: 400, textAlign: 'center' }}
+              component="p"
+            >
+              7-Star holds a wide range of credentials needed to provide the highest level of expertise and
+              professionalism in the services you need. We strive for excellence in all aspects of the business
             </Typography>
           </motion.div>
         </Box>
-        <SliderStyle>
-          <Slider ref={carouselRef} {...settings}>
-            {MOCK_CAROUSELS.map((item) => (
-              <CarouselItem key={item.title} item={item} />
-            ))}
-          </Slider>
-        </SliderStyle>
         {/* <Box sx={{ mb: 4 }}>
           <motion.div variants={varFadeInUp} style={{ marginTop: 0 }}>
             <Typography

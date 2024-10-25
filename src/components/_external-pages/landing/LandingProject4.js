@@ -48,7 +48,7 @@ export default function LandingBusiness() {
                 }}
                 component="h2"
               >
-                Inventory Management System
+                Coffee Ordering System
               </Typography>
               <Typography variant="h6" sx={{ color: 'black', mt: 1, fontWeight: 400 }}>
                 TEAMBA, a inventory management system, I developed for my mini-capstone project during my second year in college.
