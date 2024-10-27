@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import { keyframes } from '@mui/system';
 import flashFill from '@iconify/icons-eva/flash-fill';
 // material
 import { styled } from '@material-ui/core/styles';
@@ -34,6 +35,26 @@ const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(({ them
   paddingBottom: theme.spacing(15)
 }));
 
+const waveAnimation = keyframes`
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+`;
+
+// Create a styled span for the waving emoji
+const WavingEmoji = styled('span')`
+  display: inline-block;
+  animation-name: ${waveAnimation};
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;  /* Adjust pivot point if needed */
+`;
+
 
 const HeroVideoStyle = styled(motion.video)({
   zIndex: -1,
@@ -45,6 +66,7 @@ const HeroVideoStyle = styled(motion.video)({
   left: 0,
   opacity: 0.1, // Adjust opacity as needed
 });
+
 
 // const HeroOverlayStyle = styled(motion.img)({
 //   zIndex: 9,
@@ -119,7 +141,10 @@ export default function LandingHero() {
                   
                 }}
               >
-                Hi!👋
+                Hi!
+                <WavingEmoji>
+                  👋
+                </WavingEmoji>
               </Typography>
             </motion.div>
 

@@ -17,7 +17,7 @@ const MOCK_CAROUSELS = [
   },
   {
     id: 2,
-    image: '/favicon/css.png',
+    image: '/favicon/css3.png',
     title: 'CSS'
   },
   {

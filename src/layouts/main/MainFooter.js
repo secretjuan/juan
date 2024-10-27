@@ -22,37 +22,38 @@ export default function MainFooter() {
     <RootStyle>
       <Divider />
       <Container maxWidth="lg" sx={{ pt: 10 }}>
-        <Grid
-          container
-          justifyContent={{ xs: 'center', md: 'center' }}
-          sx={{ textAlign: { xs: 'center', md: 'left' } }}
-        >
-          <Grid item xs={12} md={5} sx={{ textAlign: 'center' }}>
-            <Typography variant="overline" sx={{ pr: { md: 5 } }}>
-              Office address
-            </Typography>
-            <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              Caloocan City, Philippines
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12} md={3} sx={{ textAlign: 'center' }}>
-            <Typography variant="overline" sx={{ pr: { md: 5 } }}>
-              Email address
-            </Typography>
-            <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              sanchez.juanmiguel16@gmail.com
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={3} sx={{ textAlign: 'center' }}>
-            <Typography variant="overline" sx={{ pr: { md: 5 } }}>
-              Call
-            </Typography>
-            <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              (+63) 9123768202
-            </Typography>
-          </Grid>
+      <Grid
+        container
+        justifyContent="center"
+        sx={{ textAlign: 'center' }}
+      >
+        <Grid item xs={12} md={4}>
+          <Typography variant="overline">
+            Office address
+          </Typography>
+          <Typography variant="body2" mb={3}>
+            Caloocan City, Philippines
+          </Typography>
         </Grid>
+
+        <Grid item xs={12} md={4}>
+          <Typography variant="overline">
+            Email address
+          </Typography>
+          <Typography variant="body2" mb={3}>
+            sanchez.juanmiguel16@gmail.com
+          </Typography>
+        </Grid>
+
+        <Grid item xs={12} md={4}>
+          <Typography variant="overline">
+            Call
+          </Typography>
+          <Typography variant="body2" mb={3}>
+            (+63) 9123768202
+          </Typography>
+        </Grid>
+      </Grid>
         <Typography
           component="p"
           variant="body2"
