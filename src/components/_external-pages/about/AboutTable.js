@@ -24,9 +24,9 @@ const companyData = [
   { label: 'Full Name', value: 'Juan Miguel Sanchez' },
   { label: 'Nationality', value: 'Filipino' },
   { label: 'Birthday', value: 'November 16, 2002' },
-  { label: 'Area of Business', value: 'Manufacture and sales of semiconductor devices' },
-  { label: 'Address of Headquarters', value: '2091, Gyeongchung-daero, Bubal-eup, Icheon-si, Gyeonggi-do, Korea' },
-  { label: 'Products and Services', value: 'Memory semiconductor DRAM, NAND Flash, MCP (Multi-Chip Package), etc. \nSystem semiconductor CIS (CMOS Image Sensor), etc.\n*Currently only selling SSD product line to consumers.' }
+  { label: 'Education', value: 'Bachelor of Science in Information Technology' },
+  { label: 'N/A', value: '?' },
+  { label: 'N/A', value: '?' }
 ];
 
 const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(({ theme }) => ({
