@@ -10,7 +10,7 @@ import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInDown } from '../../anima
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   position: 'relative',
-  backgroundColor: theme.palette.grey[400],
+  backgroundColor: '#fff',
   overflow: 'hidden',
   height: '50vw',
   [theme.breakpoints.up('md')]: {
@@ -19,7 +19,8 @@ const RootStyle = styled(motion.div)(({ theme }) => ({
     width: '100%',
     height: '30vh',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    
   }
 }));
 
@@ -57,11 +58,11 @@ export default function AboutHero() {
   return (
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
-        <HeroOverlayStyle alt="about-us-overlay" src="/static/overlay.svg" variants={varFadeIn} />
+      <HeroOverlayStyle alt="about-us-overlay" src="/favicon/bg1.png" variants={varFadeIn} />
 
         <HeroImgStyle
           alt="about-us"
-          src="/static/about-us.jpg"
+          src="#"
           variants={varFadeInUp}
           style={{
             height: '100vh',
@@ -73,8 +74,8 @@ export default function AboutHero() {
         <Container maxWidth="lg">
           <ContentStyle>
             <motion.div variants={varFadeInDown}>
-              <Typography variant="h1" sx={{ color: 'common.white' }}>
-                About us
+              <Typography variant="h1" sx={{ color: 'black', paddingBottom: '30px' }}>
+                About Me
               </Typography>
             </motion.div>
           </ContentStyle>

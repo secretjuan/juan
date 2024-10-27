@@ -70,7 +70,7 @@ export default function MainNavbar() {
           <Link component={RouterLink} to="/" underline="none">
             <Box sx={{ width: '250px', height: '50px', mx: 'auto', my: 1, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ width: 200, pr: { xs: 10, sm: 5, md: 5 }, pl: 0, py: 5 }}>
-                <motion.img variants={varBounceInDown} src="/static/logo.png" style={{ objectFit: 'contain' }} />
+                <motion.img variants={varBounceInDown} src="/favicon/jms2.png" style={{ objectFit: 'contain' }} />
               </Box>
             </Box>
           </Link>

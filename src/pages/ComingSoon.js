@@ -14,12 +14,13 @@ const RootStyle = styled(Page)(({ theme }) => ({
   minHeight: '100%',
   alignItems: 'center',
   paddingTop: theme.spacing(15),
-  paddingBottom: theme.spacing(10)
+  paddingBottom: theme.spacing(10),
+  backgroundColor: '#363636'
 }));
 
 // ----------------------------------------------------------------------
 
-export default function Page404() {
+export default function ComingSoon() {
   return (
     <RootStyle title="404 Page Not Found | JMS">
       <Container>
@@ -27,12 +28,11 @@ export default function Page404() {
           <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
             <motion.div variants={varBounceIn}>
               <Typography variant="h3" paragraph sx={{ color: 'blue.main' }}>
-                Ooops page not found.
+                COMING SOON
               </Typography>
             </motion.div>
             <Typography sx={{ color: 'blue.main' }}>
-              Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check
-              your spelling.
+              Thank you for your understanding as I complete this feature!
             </Typography>
             <Box sx={{ my: 3 }}>
               <Button to="/" size="large" variant="outlined" color="blue" component={RouterLink}>

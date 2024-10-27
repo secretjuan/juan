@@ -26,7 +26,7 @@ export default function MainFooter() {
         >
           <Grid item xs={12} sx={{ mb: 10, mx: 'auto' }}>
             <ScrollLink to="move_top" spy smooth>
-              <Box component="img" src="/static/logo.png" sx={{ width: 250, objectFit: 'contain', mx: 'auto' }} />
+              <Box component="img" src="/favicon/jms2.png" sx={{ width: 250, objectFit: 'contain', mx: 'auto' }} />
             </ScrollLink>
           </Grid>
           <Grid item xs={12} md={5} sx={{ textAlign: 'center' }}>
@@ -34,7 +34,7 @@ export default function MainFooter() {
               Office address
             </Typography>
             <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              Unit 503 FERN Building I, 827 P. Paredes Street, Sampaloc, Manila
+              Caloocan City, Philippines
             </Typography>
           </Grid>
 
@@ -43,7 +43,7 @@ export default function MainFooter() {
               Email address
             </Typography>
             <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              7star.temporary@gmail.com
+              sanchez.juanmiguel16@gmail.com
             </Typography>
           </Grid>
           <Grid item xs={12} md={3} sx={{ textAlign: 'center' }}>
@@ -51,7 +51,7 @@ export default function MainFooter() {
               Call
             </Typography>
             <Typography variant="body2" sx={{ pr: { md: 5 }, mb: 3 }}>
-              (02) 8251 5139
+              (+63) 9123768202
             </Typography>
           </Grid>
           <Grid item xs={12} md={1}>
@@ -59,7 +59,7 @@ export default function MainFooter() {
               <Link
                 rel="noreferrer"
                 target="_blank"
-                href="https://www.facebook.com/7-Star-Manpower-Services-of-the-Philippines-Corp-633111266817755"
+                href="#"
                 sx={{
                   color: 'common.grey',
                   mx: 2,

@@ -21,7 +21,7 @@ const MOCK_CAROUSELS = [
   },
   {
     id: 4,
-    image: '/static/court3.jpg',
+    image: '/favicon/comingsoon.jpg',
     description: 'Coffee Ordering System'
   }
 ];
@@ -34,7 +34,8 @@ const RootStyle = styled('div')(() => ({
   marginBottom: '0vh',
   height: 'auto',
   paddingBottom: '50px',
-  // backgroundColor: '#363636'
+  backgroundColor: '#363636',
+  color: 'white'
 }));
 
 const CarouselImgStyle = styled('img')(({ theme }) => ({
@@ -67,7 +68,7 @@ function CarouselItem({ item }) {
         position: 'relative',
         width:{xs:'90%', md:'100%'},
         textAlign: 'center',
-        color: 'black'
+        
       }}
     >
       <CarouselImgStyle alt={title} src={image} />
@@ -90,7 +91,7 @@ export default function Card() {
     >
       <Container sx={{backgroundColor: 'grey[1]', alignContent: 'center'}}>
         <Box sx={{ textAlign: 'center', mb:{xs:5, md:10}, mt: {xs:3, md:4} }}>
-          <Typography variant='h4' sx={{ fontSize: { xs: '16px', md: '38px', color: 'black' } }}> Projects </Typography>
+          <Typography variant='h2' sx={{ fontSize: { xs: '16px', md: '38px', } }} component={'h2'}> Projects </Typography>
         </Box>
         <Grid container spacing={1} justifyContent="center">
           {MOCK_CAROUSELS.map((item) => (

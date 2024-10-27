@@ -210,7 +210,7 @@ export default function MenuMobile({ isOffset, isHome }) {
               }}
             >
               <Box sx={{ width: 200, py: 5, px: 3 }}>
-                <motion.img variants={varBounceInDown} src="/static/logo.png" style={{ objectFit: 'contain' }} />
+                <motion.img variants={varBounceInDown} src="/favicon/jms2.png" style={{ objectFit: 'contain' }} />
               </Box>
             </Box>
           </Link>

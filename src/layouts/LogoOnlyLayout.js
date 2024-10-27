@@ -29,7 +29,7 @@ export default function LogoOnlyLayout() {
       <HeaderStyle>
         <Link component={RouterLink} to="/" underline="none">
           <Box sx={{ width: '50px', height: '50px', mx: 'auto', my: 1 }}>
-            <motion.img variants={varBounceInDown} src="/static/logo.png" />
+            <motion.img variants={varBounceInDown} src="/favicon/jms2.png" />
           </Box>
         </Link>
       </HeaderStyle>

@@ -37,7 +37,6 @@ export default function LandingPage() {
       <LandingProject1 />
       <LandingBusiness />
       <LandingProject2 />
-      <LandingProject4 />
       <LandingAccreditations />
     </RootStyle>
   );

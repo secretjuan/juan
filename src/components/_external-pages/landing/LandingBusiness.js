@@ -6,7 +6,7 @@ import { Container, Typography, Grid, Button, Link, Box } from '@material-ui/cor
 import { motion } from 'framer-motion';
 import { varFadeInLeft, varFadeInRight } from '../../animate';
 
-const cover = '/favicon/bg.avif';
+const cover = '/favicon/bg1.png';
 
 const RootStyle = styled('div')(() => ({
   position: 'relative',
@@ -15,7 +15,18 @@ const RootStyle = styled('div')(() => ({
   paddingBottom: 42,
   height: 600,
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  color: 'white',
+  '@media (max-width:600px)': {
+    height: 'auto', // Allow height to adjust for smaller screens
+    paddingTop: 24,
+    paddingBottom: 24,
+  },
+  '@media (min-width:601px) and (max-width:900px)': {
+    paddingTop: 30,
+    paddingBottom: 30,
+    height: 'auto', // Adjust height for medium screens
+  }
 }));
 
 export default function LandingBusiness() {
@@ -34,7 +45,17 @@ export default function LandingBusiness() {
         <Grid container spacing={5} sx={{ width: '100%' }}>
           <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
             <motion.div variants={varFadeInLeft} style={{ marginTop: 0 }}>
-              <Box component="img" src="/static/court1.jpg" sx={{ borderRadius: 4, overflow: 'hidden' }} />
+              <Box 
+                component="img" 
+                src="/static/court1.jpg" 
+                sx={{ 
+                  borderRadius: 4, 
+                  overflow: 'hidden',
+                  width: '100%',
+                  height: 'auto',
+                
+                }} 
+              />
             </motion.div>
           </Grid>
           <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center',}}>
@@ -42,7 +63,6 @@ export default function LandingBusiness() {
               <Typography
                 variant="h2"
                 sx={{
-                  color: 'black',
                   margin: 'auto',
                   mt: { xs: 5, sm: 0, md: 0 }
                 }}
@@ -50,7 +70,7 @@ export default function LandingBusiness() {
               >
                 Inventory Management System
               </Typography>
-              <Typography variant="h6" sx={{ color: 'black', mt: 1, fontWeight: 400 }}>
+              <Typography variant="h6" sx={{mt: 1, fontWeight: 400 }}>
                 TEAMBA, a inventory management system, I developed for my mini-capstone project during my second year in college.
               </Typography>
 

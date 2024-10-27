@@ -2,21 +2,9 @@
 import { styled } from '@material-ui/core/styles';
 // components
 import Page from '../components/Page';
-import {
-  AboutHero,
-  AboutContent,
-  AboutVisionMission,
-  AboutCore,
-  AboutHistory,
-} from '../components/_external-pages/about';
-import { 
-  LandingStores,
-  LandingTeam,
-  LandingBusiness,
-  LandingAccreditations
-
- } from 'components/_external-pages/landing';
- import AboutTable from '../components/_external-pages/about/AboutTable'
+import { LoginHero, LoginForm, LoginContents } from '../components/_external-pages/login';
+import ComingSoon from './ComingSoon';
+import { LandingBusiness } from 'components/_external-pages/landing';
 
 // ----------------------------------------------------------------------
 
@@ -32,12 +20,12 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function AboutPage() {
+export default function ComingSoonPage() {
   return (
-    <RootStyle title="About Me - JMS" id="move_top">
-      <AboutHero />
-      <AboutTable />
-      
+    <RootStyle title="Coming Soon - JMS" id="move_top">
+      <ContentStyle>
+        <ComingSoon />
+      </ContentStyle>
     </RootStyle>
   );
 }

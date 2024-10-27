@@ -9,11 +9,11 @@ const menuConfig = [
   },
   {
     title: 'Contact',
-    path: '/Contact'
+    path: '/coming-soon'
   },
   {
     title: 'Blog',
-    path: '/#'
+    path: '/coming-soon-blog'
   }
 
 ];

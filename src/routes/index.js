@@ -6,6 +6,8 @@ import LogoOnlyLayout from '../layouts/LogoOnlyLayout';
 import SignedLayout from '../layouts/signed';
 // components
 import LoadingScreen from '../components/LoadingScreen';
+import ComingSoon from 'pages/ComingSoon';
+import ComingSoonPage from 'pages/ComingSoonPage';
 
 // ----------------------------------------------------------------------
 
@@ -60,10 +62,12 @@ export default function Router() {
       children: [
         { path: '/', element: <LandingPage /> },
         { path: '/about', element: <AboutPage /> },
-        { path: '/services', element: <ServicesPage /> },
-        { path: '/contact-us', element: <ContactPage /> },
-        { path: '/inquiry', element: <InquiryPage /> },
-        { path: '/login', element: <LoginPage /> },
+        { path: '/coming-soon', element: <ComingSoonPage /> },
+        { path: '/coming-soon-blog', element: <ComingSoonPage /> },
+        // { path: '/services', element: <ServicesPage /> },
+        // { path: '/contact-us', element: <ContactPage /> },
+        // { path: '/inquiry', element: <InquiryPage /> },
+        // { path: '/login', element: <LoginPage /> },
 /*        { path: '/apply', element: <ApplicationPage /> },
         { path: '/apply/success', element: <ApplicationPageSuccess /> },
         { path: '/apply/member', element: <MemberPage /> }*/

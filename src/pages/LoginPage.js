@@ -20,7 +20,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function LoginPage() {
   return (
-    <RootStyle title="Applicant Login - 7 Star Manpower Services of Philippines Corporation" id="move_top">
+    <RootStyle title="Applicant Login - JMS" id="move_top">
       <LoginHero />
       <ContentStyle>
         <LoginForm />
