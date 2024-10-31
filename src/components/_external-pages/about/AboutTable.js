@@ -6,6 +6,7 @@ import { styled } from '@material-ui/core/styles';
 import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableRow, Paper, Button } from '@mui/material';
 import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInDown } from '../../animate';
 import { Stack } from '@material-ui/core';
+import { FaGithub, FaLinkedin, FaAward } from 'react-icons/fa';
 
 const cover = '/favicon/bg.avif';
 
@@ -25,8 +26,24 @@ const companyData = [
   { label: 'Nationality', value: 'Filipino' },
   { label: 'Birthday', value: 'November 16, 2002' },
   { label: 'Education', value: 'Bachelor of Science in Information Technology' },
-  { label: 'N/A', value: '?' },
-  { label: 'N/A', value: '?' }
+  { label: 'Experience', value: '' },
+  { 
+    label: 'Socials', 
+    value: (
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <a href="https://github.com/JuanMig16" target="_blank" rel="noopener noreferrer">
+          <FaGithub size={30} style={{ color: '#fff' }} />
+        </a>
+        <a href="https://www.linkedin.com/in/juan-miguel-sanchez-96416331a/" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin size={30} style={{ color: '#fff' }}/>
+        </a>
+        <a href="https://www.credly.com/users/juan-miguel-sanchez.7a027278" target="_blank" rel="noopener noreferrer">
+          <FaAward size={30} style={{ color: '#fff' }} />
+        </a>
+        {/* Add more icons as needed */}
+      </div>
+    ) 
+  },
 ];
 
 const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(({ theme }) => ({
@@ -73,27 +90,39 @@ export default function AboutTable() {
         <TableContainer component={Paper} sx={{ backgroundColor: 'transparent' }}>
             <Table>
             <TableBody>
-                {companyData.map((item, index) => (
+            {companyData.map((item, index) => (
                 <TableRow key={index}>
-                    <TableCell component="th" scope="row" sx={{ color: '#fff', fontWeight: 'bold', borderBottom: '1px solid #444' }}>
+                  <TableCell 
+                    component="th" 
+                    scope="row" 
+                    sx={{ color: '#fff', fontWeight: 'bold', borderBottom: '1px solid #444' }}
+                  >
                     {item.label}
-                    </TableCell>
-                    <TableCell sx={{ color: '#fff', borderBottom: '1px solid #444' }}>
-                    {item.value.split('\n').map((line, i) => (
+                  </TableCell>
+                  <TableCell sx={{ color: '#fff', borderBottom: '1px solid #444' }}>
+                    {typeof item.value === 'string' ? (
+                      item.value.split('\n').map((line, i) => (
                         <div key={i}>{line}</div>
-                    ))}
-                    </TableCell>
+                      ))
+                    ) : (
+                      item.value // Render the JSX directly for social icons
+                    )}
+                  </TableCell>
                 </TableRow>
-                ))}
+              ))}
             </TableBody>
-            </Table>
+          </Table>
         </TableContainer>
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 }}>
-            <Button variant="outlined" color="inherit" sx={{ marginRight: 1 }}>
-            Shop Now
-            </Button>
-            <Button variant="contained" color="secondary">
-            Data Migration Tool
+            <Button 
+              variant="outlined" 
+              color="inherit" 
+              sx={{ marginRight: 1 }}
+              href="https://www.credly.com/users/juan-miguel-sanchez.7a027278" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              View my Credly Badges
             </Button>
         </Box>
         </Container>

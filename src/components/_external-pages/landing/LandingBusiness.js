@@ -1,19 +1,40 @@
 // material
-import { styled } from '@material-ui/core/styles';
-import { Container, Typography, Grid, Button, Link, Box } from '@material-ui/core';
+import { Container, Typography, Grid, Button, Link, Box,  Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core';
 
 //
 import { motion } from 'framer-motion';
 import { varFadeInLeft, varFadeInRight } from '../../animate';
+import React, { useState } from 'react';
+import { styled } from '@mui/system';
+import { IconButton } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBack from '@mui/icons-material/ArrowBack';
 
 const cover = '/favicon/bg1.png';
+
+const fadeOutLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const images = [
+  '/static/projects/teamba2.png',
+  '/static/projects/teamba1.png',
+  '/static/projects/teamba.png', // Replace with your second image path
+];
+
 
 const RootStyle = styled('div')(() => ({
   position: 'relative',
   marginBottom: '0px',
   paddingTop: 42,
   paddingBottom: 42,
-  height: 600,
+  height: 'auto',
   display: 'flex',
   alignItems: 'center',
   color: 'white',
@@ -30,6 +51,29 @@ const RootStyle = styled('div')(() => ({
 }));
 
 export default function LandingBusiness() {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleChangeImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePreviousImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <RootStyle
       sx={{
@@ -42,23 +86,94 @@ export default function LandingBusiness() {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={5} sx={{ width: '100%' }}>
-          <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
-            <motion.div variants={varFadeInLeft} style={{ marginTop: 0 }}>
+        <Grid container spacing={2} sx={{ width: '100%' }}>
+          <Grid 
+            item 
+            xs={12} 
+            md={10} 
+            sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              position: 'relative',
+            }}
+          >
+            <motion.div 
+              initial="hidden" 
+              animate="visible" 
+              exit="hidden" 
+              variants={fadeOutLeft} 
+              transition={{ duration: 0.7 }}
+              key={currentIndex} // This key prop helps trigger the exit/entrance animations
+            >
               <Box 
                 component="img" 
-                src="/static/court1.jpg" 
-                sx={{ 
-                  borderRadius: 4, 
+                src={images[currentIndex]} 
+                sx={{
+                  borderRadius: 4,
                   overflow: 'hidden',
-                  width: '100%',
-                  height: 'auto',
-                
-                }} 
+                  width: '100%', // Make image responsive
+                  height: 'auto' // Ensure the aspect ratio is maintained
+                }}
               />
             </motion.div>
+
+            <IconButton
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '43px',
+                transform: 'translateY(-50%)',
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '50%',
+                width: 40,
+                height: 40,
+                '&:hover': {
+                  backgroundColor: '#FF9800',
+                },
+              }}
+              onClick={handlePreviousImage}
+            >
+              <ArrowBack 
+                sx={{ 
+                  color: '#FF9800', 
+                  '&:hover': {
+                    color: 'white',
+                    transition: 'color 0.2s ease',
+                  }, 
+                }} 
+              />
+            </IconButton>
+
+            {/* Arrow Button to Navigate to the Next Image */}
+            <IconButton
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                right: '20px',
+                transform: 'translateY(-50%)',
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '50%',
+                width: 40,
+                height: 40,
+                '&:hover': {
+                  backgroundColor: '#FF9800',
+                },
+              }}
+              onClick={handleChangeImage}
+            >
+              <ArrowForwardIcon 
+                sx={{ 
+                  color: '#FF9800', 
+                  '&:hover': {
+                    color: 'white',
+                    transition: 'color 0.2s ease',
+                  }, 
+                }} 
+              />
+            </IconButton>
           </Grid>
-          <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center',}}>
+          <Grid item xs={12} md={8} sx={{ display: 'flex', alignItems: 'flex-end',}}>
             <motion.div variants={varFadeInRight} style={{ marginTop: 0, width: '100%' }}>
               <Typography
                 variant="h2"
@@ -75,13 +190,18 @@ export default function LandingBusiness() {
               </Typography>
 
               <Box mt={5}>
-                <Button variant="outlined" color="inherit" sx={{ marginRight: 2 }}>
-                  Learn More
-                </Button>
-                <Button variant="contained" color="secondary">
-                  Shop Now
-                </Button>
-              </Box>
+              <Button 
+                variant="outlined" 
+                color="inherit" 
+                sx={{ marginRight: 2 }} 
+                onClick={handleOpen} // Open modal on click
+              >
+                Learn More
+              </Button>
+              <Button variant="contained" color="secondary">
+                Shop Now
+              </Button>
+            </Box>
             </motion.div>
           </Grid>
         </Grid>

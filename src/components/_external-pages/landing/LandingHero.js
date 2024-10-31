@@ -109,24 +109,6 @@ export default function LandingHero() {
         <source src="/favicon/vg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </HeroVideoStyle>
-        {/* <HeroOverlayStyle alt="get-started-get-discovered-overlay" src="/favicon/vg.mp4" variants={varFadeIn} />
-
-        <HeroImgStyle
-          alt="get-started-get-discovered"
-          src="/favicon/vg.mp4"
-          variants={varFadeInUp}
-          style={{
-            height: '100vh',
-            objectFit: 'cover',
-            objectPosition: 'center'
-          }}
-        /> */}
-          {/* <div style={{ 
-            position: 'absolute', top: 0, left: 0, 
-            width: '100%', height: '100%', 
-            backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 1 
-            }} 
-          /> */}
 
         <Container maxWidth="lg">
           <ContentStyle>
@@ -181,38 +163,6 @@ export default function LandingHero() {
                 I create websites that not only function well but also show a sense of place and beauty. 
                 Every feature is built with purpose, ensuring that each element serves a meaningful role in the overall experience. Let’s bring your ideas to life together!
               </Typography>
-            </motion.div>
-
-            <motion.div variants={varFadeInRight} style={{ marginTop: 0 }}>
-              {/* <Link
-                sx={{
-                  '&:hover': {
-                    textDecoration: 'none'
-                  }
-                }}
-                rel="noreferrer"
-                href="/services"
-              > */}
-              
-              {/* <Button 
-                variant="contained" 
-                onClick={toggleBlur} 
-                sx={{ marginTop: 4, backgroundColor: 'red', color: 'white' }}
-              >
-                {blur === 0 ? 'Blur Background' : 'Clear Blur'}
-              </Button> */}
-
-
-                {/* <Button
-                  size="large"
-                  variant="contained"
-                  sx={{ boxShadow: 'none', mt: 3 }}
-                  endIcon={<Icon icon={flashFill} width={20} height={20} />}
-                  style={{ backgroundColor: "#ff9800", color: '#fff' }}
-                >
-                  Available Court
-                </Button> */}
-              {/* </Link> */}
             </motion.div>
           </ContentStyle>
         </Container>

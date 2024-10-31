@@ -74,7 +74,7 @@ export default function AboutHero() {
         <Container maxWidth="lg">
           <ContentStyle>
             <motion.div variants={varFadeInDown}>
-              <Typography variant="h1" sx={{ color: 'black', paddingBottom: '30px' }}>
+              <Typography variant="h1" sx={{ color: 'white', paddingBottom: '30px' }}>
                 About Me
               </Typography>
             </motion.div>

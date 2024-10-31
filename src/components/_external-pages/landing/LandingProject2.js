@@ -1,17 +1,36 @@
-import React from 'react';
-import { Container, Grid, Typography, Button, Box } from '@mui/material';
+import React, { useState } from 'react';
+import { Container, Grid, Typography, Button, Box, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import { styled } from '@mui/system';
 import { motion } from 'framer-motion';
-import { varFadeInLeft, varFadeInRight } from '../../animate';
+import { IconButton } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBack from '@mui/icons-material/ArrowBack';
 
 const cover = '/favicon/bg.avif';
+
+const fadeOutLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const images = [
+  '/static/projects/renta.png',
+  '/static/projects/renta2.png',
+  '/static/projects/renta3.png',
+  '/static/projects/renta1.png',
+];
 
 const RootStyle = styled('div')({
   position: 'relative',
   marginBottom: '0px',
   paddingTop: 42,
   paddingBottom: 42,
-  height: 600,
+  height: 'auto',
   display: 'flex',
   alignItems: 'center',
   color: 'black',
@@ -28,6 +47,28 @@ const RootStyle = styled('div')({
 });
 
 export default function ProductShowcase() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleChangeImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePreviousImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <RootStyle
       sx={{
@@ -41,8 +82,95 @@ export default function ProductShowcase() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
+        <Grid 
+            item 
+            xs={12} 
+            md={8} 
+            sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              position: 'relative', 
+            }}
+          >
+            <motion.div 
+              initial="hidden" 
+              animate="visible" 
+              exit="hidden" 
+              variants={fadeOutLeft} 
+              transition={{ duration: 0.7 }}
+              key={currentIndex} // This key prop helps trigger the exit/entrance animations
+            >
+              <Box 
+                component="img" 
+                src={images[currentIndex]} 
+                sx={{
+                  borderRadius: 4,
+                  overflow: 'hidden',
+                  width: '100%', // Make image responsive
+                  height: 'auto' // Ensure the aspect ratio is maintained
+                }}
+              />
+            </motion.div>
+
+            <IconButton
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '43px',
+                transform: 'translateY(-50%)',
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '50%',
+                width: 40,
+                height: 40,
+                '&:hover': {
+                  backgroundColor: '#FF9800',
+                },
+              }}
+              onClick={handlePreviousImage}
+            >
+              <ArrowBack 
+                sx={{ 
+                  color: '#FF9800', 
+                  '&:hover': {
+                    color: 'white',
+                    transition: 'color 0.2s ease',
+                  }, 
+                }} 
+              />
+            </IconButton>
+
+            {/* Arrow Button to Navigate to the Next Image */}
+            <IconButton
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                right: '20px',
+                transform: 'translateY(-50%)',
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '50%',
+                width: 40,
+                height: 40,
+                '&:hover': {
+                  backgroundColor: '#FF9800',
+                },
+              }}
+              onClick={handleChangeImage}
+            >
+              <ArrowForwardIcon 
+                sx={{ 
+                  color: '#FF9800', 
+                  '&:hover': {
+                    color: 'white',
+                    transition: 'color 0.2s ease',
+                  }, 
+                }} 
+              />
+            </IconButton>
+            
+          </Grid>
           {/* Left Side - Text Content */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={4}>
             <Typography variant="h2" component="h2" gutterBottom sx={{ fontSize: { xs: '1.5rem', md: '2.5rem' } }}>
               Court Rental Management System
             </Typography>
@@ -58,22 +186,6 @@ export default function ProductShowcase() {
                 Shop Now
               </Button>
             </Box>
-          </Grid>
-
-          {/* Right Side - Product Image */}
-          <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
-            <motion.div variants={varFadeInLeft} style={{ marginTop: 0 }}>
-              <Box
-                component="img"
-                src="/static/court1.jpg"
-                sx={{
-                  borderRadius: 4,
-                  overflow: 'hidden',
-                  width: '100%', // Make image responsive
-                  height: 'auto' // Ensure the aspect ratio is maintained
-                }}
-              />
-            </motion.div>
           </Grid>
         </Grid>
       </Container>

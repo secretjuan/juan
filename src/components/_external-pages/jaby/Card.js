@@ -6,17 +6,17 @@ import { Box, Typography, Grid, Container } from '@mui/material';
 const MOCK_CAROUSELS = [
   {
     id: 1,
-    image: '/static/court1.jpg',
+    image: '/static/projects/POS1.png',
     description: 'POS System'
   },
   {
     id: 2,
-    image: '/static/court1.jpg',
+    image: '/static/projects/teamba2.png',
     description: 'Inventory Management System'
   },
   {
     id: 3,
-    image: '/static/court2.jpg',
+    image: '/static/projects/renta.png',
     description: 'Court Rental Management System'
   },
   {
@@ -42,9 +42,12 @@ const CarouselImgStyle = styled('img')(({ theme }) => ({
   width: '100%',
   height: 'auto',
   margin: 'auto',
-  objectFit: 'contain',
-  transition: theme.transitions.create('all'),
-  maxWidth: 500,
+  objectFit: 'cover', // Makes sure images are fully covered and centered
+  transition: theme.transitions.create('all', {
+    duration: theme.transitions.duration.short
+  }),
+  maxWidth: 400, // Larger size for better visibility
+  maxHeight: 250,
   [theme.breakpoints.down('sm')]: {
     maxWidth: 250
   }
@@ -68,6 +71,8 @@ function CarouselItem({ item }) {
         position: 'relative',
         width:{xs:'90%', md:'100%'},
         textAlign: 'center',
+        boxShadow: 3, // Add shadow for visual separation
+        backgroundColor: '#0f0f0f'
         
       }}
     >
@@ -79,16 +84,7 @@ function CarouselItem({ item }) {
 
 export default function Card() {
   return (
-    <RootStyle
-      // sx={{
-      //   backgroundImage: `url(${cover})`,
-      //   backgroundRepeat: 'no-repeat',
-      //   backgroundSize: 'cover',
-      //   backgroundPosition: 'center',
-      //   backgroundColor: '#FFFFFF',
-      //   backgroundAttachment: 'fixed'
-      // }}
-    >
+    <RootStyle>
       <Container sx={{backgroundColor: 'grey[1]', alignContent: 'center'}}>
         <Box sx={{ textAlign: 'center', mb:{xs:5, md:10}, mt: {xs:3, md:4} }}>
           <Typography variant='h2' sx={{ fontSize: { xs: '16px', md: '38px', } }} component={'h2'}> Projects </Typography>

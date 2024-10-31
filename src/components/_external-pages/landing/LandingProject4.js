@@ -51,7 +51,7 @@ export default function LandingBusiness() {
                 Coffee Ordering System
               </Typography>
               <Typography variant="h6" sx={{ color: 'black', mt: 1, fontWeight: 400 }}>
-                TEAMBA, a inventory management system, I developed for my mini-capstone project during my second year in college.
+                I developed a coffee ordering system for my school project in 
               </Typography>
 
               <Box mt={5}>
