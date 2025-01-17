@@ -16,7 +16,7 @@ const MOCK_CAROUSELS = [
   },
   {
     id: 3,
-    image: '/static/projects/renta.png',
+    image: '/static/projects/rentacourt1.png',
     description: 'Court Rental System'
   },
   {
