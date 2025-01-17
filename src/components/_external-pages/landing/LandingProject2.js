@@ -19,10 +19,10 @@ const fadeInRight = {
 };
 
 const images = [
-  '/static/projects/renta.png',
-  '/static/projects/renta2.png',
+  '/static/projects/rentacourt1.png',
+  '/static/projects/rentacourt2.png',
   '/static/projects/renta3.png',
-  '/static/projects/renta1.png',
+  '/static/projects/renta4.png',
 ];
 
 const RootStyle = styled('div')({

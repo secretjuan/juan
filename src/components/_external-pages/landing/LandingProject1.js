@@ -89,7 +89,7 @@ export default function ProductShowcase() {
               POS System
             </Typography>
             <Typography variant="h6" sx={{ fontWeight: 400, width: '90%' }}>
-              I developed a simple point-of-sale system for my family's small meat shop. 
+              I developed a simple point-of-sale system for my local client, a small meat shop. 
               This system is designed exclusively for issuing 'not official receipts' 
               and maintaining inventory records. 
               Please note that it is not registered with the Bureau of Internal Revenue (BIR).
@@ -102,9 +102,6 @@ export default function ProductShowcase() {
                 onClick={handleOpen} // Open modal on click
               >
                 Learn More
-              </Button>
-              <Button variant="contained" color="secondary">
-                Shop Now
               </Button>
             </Box>
           </Grid>

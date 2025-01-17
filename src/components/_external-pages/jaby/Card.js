@@ -17,7 +17,7 @@ const MOCK_CAROUSELS = [
   {
     id: 3,
     image: '/static/projects/renta.png',
-    description: 'Court Rental Management System'
+    description: 'Court Rental System'
   },
   {
     id: 4,
@@ -40,14 +40,12 @@ const RootStyle = styled('div')(() => ({
 
 const CarouselImgStyle = styled('img')(({ theme }) => ({
   width: '100%',
-  height: 'auto',
+  height: '30vh',
   margin: 'auto',
-  objectFit: 'cover', // Makes sure images are fully covered and centered
+  objectFit: 'contain', // Makes sure images are fully covered and centered
   transition: theme.transitions.create('all', {
     duration: theme.transitions.duration.short
   }),
-  maxWidth: 400, // Larger size for better visibility
-  maxHeight: 250,
   [theme.breakpoints.down('sm')]: {
     maxWidth: 250
   }
@@ -72,7 +70,9 @@ function CarouselItem({ item }) {
         width:{xs:'90%', md:'100%'},
         textAlign: 'center',
         boxShadow: 3, // Add shadow for visual separation
-        backgroundColor: '#0f0f0f'
+        backgroundColor: '#222024',
+        // maxWidth: 1000, // Larger size for better visibility
+        // maxHeight: 'auto',
         
       }}
     >
